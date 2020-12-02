@@ -1,0 +1,83 @@
+#board td {
+	/*align-self: center;*/
+	display: inline-block;
+
+	width: 80px;
+	height: 80px;
+	border: solid 1px rgb(184, 85, 175);
+	border-radius: 50%;
+	transition: all 1s;
+	align-items: center;
+	vertical-align: center;
+
+	/*background-color: transparent;
+	color: transparent; */
+	/*table-layout: fixed;
+	overflow: hidden;
+	white-space: nowrap;
+	padding: 0; */
+}
+
+/* pieces are div within game table cells: draw as colored circles */
+
+.piece {
+	width: 80px;
+	min-height: 80px;
+	border-radius: 50%;
+	align-self: center;
+
+	/*clear: both;*/
+}
+
+/* TODO: make pieces red/blue,  depending on player 1/2 piece */
+
+.one {
+	background-color: rgb(136, 94, 190);
+	box-shadow: 0 0 3px 4px rgba(189, 118, 52, 0.5);
+	animation-name: appear;
+	animation-duration: 1s;
+}
+
+.two {
+	background-color: rgb(199, 83, 37);
+	animation-name: appear;
+	animation-duration: 1s;
+}
+
+#column-top td {
+	border: dashed 1px lightgray;
+}
+
+#column-top td:hover {
+	background-color: gold;
+}
+
+@keyframes appear {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.endclass {
+	animation-name: endAnim;
+	animation-duration: .5s;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+}
+
+@keyframes endAnim {
+	0% {
+		background-color: transparent;
+	}
+
+	100% {
+		background-color: rgba(104, 93, 209, 1);
+	}
+}
+
+.nopointerclass {
+	pointer-events: none;
+}

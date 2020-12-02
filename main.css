@@ -1,0 +1,124 @@
+#board td {
+  /*align-self: center;*/
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border: solid 1px #b855af;
+  border-radius: 50%;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  vertical-align: center;
+  /*background-color: transparent;
+	color: transparent; */
+  /*table-layout: fixed;
+	overflow: hidden;
+	white-space: nowrap;
+	padding: 0; */
+}
+
+/* pieces are div within game table cells: draw as colored circles */
+.piece {
+  width: 80px;
+  min-height: 80px;
+  border-radius: 50%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  /*clear: both;*/
+}
+
+/* TODO: make pieces red/blue,  depending on player 1/2 piece */
+.one {
+  background-color: #885ebe;
+  -webkit-box-shadow: 0 0 3px 4px rgba(189, 118, 52, 0.5);
+          box-shadow: 0 0 3px 4px rgba(189, 118, 52, 0.5);
+  -webkit-animation-name: appear;
+          animation-name: appear;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.two {
+  background-color: #c75325;
+  -webkit-animation-name: appear;
+          animation-name: appear;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+#column-top td {
+  border: dashed 1px lightgray;
+}
+
+#column-top td:hover {
+  background-color: gold;
+}
+
+@-webkit-keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.endclass {
+  -webkit-animation-name: endAnim;
+          animation-name: endAnim;
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes endAnim {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #685dd1;
+  }
+}
+
+@keyframes endAnim {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #685dd1;
+  }
+}
+
+.nopointerclass {
+  pointer-events: none;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #4e2121;
+}
+/*# sourceMappingURL=main.css.map */
