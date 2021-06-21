@@ -7,7 +7,7 @@ var board = []; // array of rows, each row is array of cells  (board[y][x])
 
 
 function makeBoard() {
-	// TODO: set "board" to empty HEIGHT x WIDTH matrix array
+	
 	//check width and height of screen then change WIDTH and HEIGHT variable
 
 	for (let i = 0; i < HEIGHT; i++) {
@@ -164,7 +164,7 @@ function handleClick(evt) {
 		board[y][x] = currPlayer;
 	}
 
-	// TODO: add line to update in-memory board
+	
 
 	placeInTable(y, x);
 
@@ -191,21 +191,17 @@ function handleClick(evt) {
 	// TODO: switch currPlayer 1 <-> 2
 }
 
-/** checkForWin: check board cell-by-cell for "does a win start here?" */
+
 
 function checkForWin() {
 	//accepts array called cells
 	function _win(cells) {
-		// Check four cells to see if they're all color of current player
-		//  - cells: list of four (y, x) cells
-		//  - returns true if all are legal coordinates & all match currPlayer
-		// y is greater than or equal to 0 AND y is less than height and x is greater than or equal to 0
+er than or equal to 0
 		//and  X IS less than width and the slot is equal to the current player
 		return cells.every(([ y, x ]) => y >= 0 && y < HEIGHT && x >= 0 && x < WIDTH && board[y][x] === currPlayer);
 	}
 
-	// TODO: read and understand this code. Add comments to help you.
-	//occurs a fter new position added
+	
 	for (let y = 0; y < HEIGHT; y++) {
 		for (let x = 0; x < WIDTH; x++) {
 			let horiz = [ [ y, x ], [ y, x + 1 ], [ y, x + 2 ], [ y, x + 3 ] ];
